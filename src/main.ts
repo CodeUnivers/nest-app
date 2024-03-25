@@ -9,6 +9,9 @@ async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter(),
+    {
+      snapshot: true,
+    },
   );
   await app.listen(3000);
 }
